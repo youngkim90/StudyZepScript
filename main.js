@@ -1,0 +1,1 @@
+App.showCenterLabel("Hello world");
