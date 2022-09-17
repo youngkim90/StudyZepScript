@@ -4,7 +4,20 @@
 
 import "zep-script";
 
-ScriptApp.showCenterLabel("Hello World");
+const spartan = ScriptApp.loadSpritesheet('spartan.png',64,96, {
+  left: [0,1,2,3],
+  up: [0],
+  down: [0],
+  right: [0,1,2,3]
+}, 8);
+
+ScriptApp.onJoinPlayer.Add(function(player) {
+  ScriptApp.showCenterLabel("Hello World");
+  player.sprite = spartan;
+  player.title = '김영완두콩';
+  player.moveSpeed = 300;
+  player.sendUpdated();
+})
 
 let zepLogo = ScriptApp.loadSpritesheet("zep_logo.png");
 
