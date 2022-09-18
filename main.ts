@@ -26,13 +26,14 @@ ScriptApp.onSay.Add(function(player, text) {
   }
 })
 
+const cloud = ScriptApp.loadSpritesheet("cloud.png", 659, 400, [0], 6);
+
 ScriptApp.onJoinPlayer.Add(function(player) {
   ScriptApp.showCenterLabel("Hello World");
-  // player.sprite = spartan;
-  player.title = '김영완두콩';
-  player.moveSpeed = 300;
-  player.sendUpdated();
-})
+
+  ScriptMap.putObject(5,5,cloud);
+  ScriptMap.moveObject(5,5,100,8,30);
+});
 
 let zepLogo = ScriptApp.loadSpritesheet("zep_logo.png");
 
